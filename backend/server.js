@@ -3,9 +3,11 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import colors from "colors";
 import dotenv from "dotenv";
+import connectDB from "./utils/database.js";
 
 dotenv.config();
 
+connectDB();
 const app = express();
 
 //middleware
