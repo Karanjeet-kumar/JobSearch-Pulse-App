@@ -6,13 +6,14 @@ import dotenv from "dotenv";
 import connectDB from "./utils/database.js";
 import userRoute from "./routes/userRoute.js";
 import companyRoute from "./routes/companyRoute.js";
+import jobRoute from "./routes/jobRoute.js";
 
 dotenv.config();
 
 connectDB();
 const app = express();
 
-//middleware
+//Middleware
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
@@ -26,9 +27,10 @@ app.get("/", (req, res) => {
   res.send("API is running..");
 });
 
-// api's
+// API's
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/company", companyRoute);
+app.use("/api/v1/job", jobRoute);
 
 const PORT = process.env.PORT;
 app.listen(PORT, console.log(`Server running at port ${PORT}`.yellow.bold));
