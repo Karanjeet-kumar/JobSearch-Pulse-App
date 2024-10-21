@@ -5,6 +5,7 @@ import colors from "colors";
 import dotenv from "dotenv";
 import connectDB from "./utils/database.js";
 import userRoute from "./routes/userRoute.js";
+import companyRoute from "./routes/companyRoute.js";
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
 
 // api's
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/company", companyRoute);
 
 const PORT = process.env.PORT;
 app.listen(PORT, console.log(`Server running at port ${PORT}`.yellow.bold));
