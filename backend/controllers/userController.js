@@ -2,6 +2,9 @@ import { User } from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
+//@description     Register new student/recruiter
+//@route           POST /api/v1/user/register
+//@access          Public
 export const register = async (req, res) => {
   try {
     const { fullname, email, phoneNumber, password, role } = req.body;
@@ -39,6 +42,9 @@ export const register = async (req, res) => {
   }
 };
 
+//@description     Login student/recruiter
+//@route           POST /api/v1/user/login
+//@access          Public
 export const login = async (req, res) => {
   try {
     const { email, password, role } = req.body;
