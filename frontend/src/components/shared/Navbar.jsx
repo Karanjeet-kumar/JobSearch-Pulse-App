@@ -4,15 +4,26 @@ import { Button } from "../ui/button";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { LogOut, User2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const user = false;
   return (
-    <div className="bg-white">
+    <div className="bg-black text-white">
       <div className="flex items-center justify-between mx-4 max-w-7xl h-16">
-        <div>
-          <h1 className="text-2xl font-bold">
-            Job<span className="text-[#F83002]">Search-Pulse</span>
+        <div className="flex items-center gap-3">
+          <img
+            src={logo}
+            alt="logo"
+            style={{
+              borderRadius: "20%",
+              border: "1px solid #36efef",
+              width: "50px",
+              height: "50px",
+            }}
+          />
+          <h1 className="text-3xl font-bold">
+            Job<span className="text-[#36efef]">Search-Pulse</span>
           </h1>
         </div>
         <div className="flex items-center gap-12">
@@ -25,7 +36,7 @@ const Navbar = () => {
             <div className="flex items-center gap-1">
               <Link to="/login">
                 <Button
-                  className="hover:bg-[#90EE90] border-stone-950"
+                  className="hover:bg-[#36efef] border-stone-950 text-black"
                   variant="outline"
                 >
                   Login
