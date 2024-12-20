@@ -5,6 +5,7 @@ import Signup from "./components/auth/Signup";
 import Home from "./components/HomePage";
 import JobPage from "./components/JobPage";
 import BrowsePage from "./components/BrowsePage";
+import ProfilePage from "./components/ProfilePage";
 
 const appRouter = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/browse",
     element: <BrowsePage />,
+  },
+  {
+    path: "/profile",
+    element: <ProfilePage />,
   },
 ]);
 
