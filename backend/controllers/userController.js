@@ -124,6 +124,9 @@ export const logout = async (req, res) => {
   }
 };
 
+//@description     Update profile student/recruiter
+//@route           POST /api/v1/profile/update
+//@access          Private
 export const updateProfile = async (req, res) => {
   try {
     const { fullname, email, phoneNumber, bio, skills } = req.body;
