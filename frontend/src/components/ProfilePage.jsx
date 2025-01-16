@@ -67,10 +67,10 @@ function Profile() {
           {isResume ? (
             <a
               target="blank"
-              href=""
+              href={user?.profile?.resume}
               className="text-blue-500 w-full hover:underline cursor-pointer"
             >
-              Karan MernStack
+              {user?.profile?.resumeOriginalName}
             </a>
           ) : (
             <span>NA</span>

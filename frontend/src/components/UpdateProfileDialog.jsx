@@ -51,7 +51,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
       formData.append("file", input.file);
     }
 
-    // API connected to Frontend(SignUp)
+    // API connected to Frontend(UpdateProfileDialog)
 
     try {
       setLoading(true);
