@@ -25,6 +25,21 @@ export const register = async (req, res) => {
         success: false,
       });
     }
+
+    let profilePhotoUrl;
+
+    // If a file is provided, upload it to Cloudinary
+    if (req.file) {
+      const file = req.file;
+      const fileUri = getDataUri(file);
+
+      const cloudResponse = await cloudinary.uploader.upload(fileUri.content, {
+        folder: "jobPulseProject", // Optional: Specify a folder in Cloudinary
+      });
+
+      profilePhotoUrl = cloudResponse.secure_url;
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await User.create({
@@ -33,6 +48,9 @@ export const register = async (req, res) => {
       phoneNumber,
       password: hashedPassword,
       role,
+      profile: {
+        profilePhoto: profilePhotoUrl,
+      },
     });
 
     return res.status(201).json({
@@ -133,10 +151,16 @@ export const updateProfile = async (req, res) => {
   try {
     const { fullname, email, phoneNumber, bio, skills } = req.body;
 
-    const file = req.file;
     // Cloudinary ---------------
-    const fileUri = getDataUri(file);
-    const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
+    let resumeUrl, originalName;
+    if (req.file) {
+      const fileUri = getDataUri(req.file);
+      const cloudResponse = await cloudinary.uploader.upload(fileUri.content, {
+        folder: "jobPulseProject", // Optional folder for organization
+      });
+      resumeUrl = cloudResponse.secure_url;
+      originalName = req.file.originalname;
+    }
 
     let skillsArray;
     if (skills) {
@@ -159,9 +183,9 @@ export const updateProfile = async (req, res) => {
     if (skills) user.profile.skills = skillsArray;
 
     // resume comes later here...
-    if (cloudResponse) {
-      user.profile.resume = cloudResponse.secure_url; // save the cloudinary url
-      user.profile.resumeOriginalName = file.originalname; // Save the original file name
+    if (resumeUrl) {
+      user.profile.resume = resumeUrl;
+      user.profile.resumeOriginalName = originalName;
     }
 
     await user.save();
