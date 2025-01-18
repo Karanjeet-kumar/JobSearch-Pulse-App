@@ -54,7 +54,9 @@ export const postJob = async (req, res) => {
   }
 };
 
-// Search Jobs
+//@description     Search jobs
+//@route           Get /api/v1/job/get
+//@access          Public/private
 export const getAllJobs = async (req, res) => {
   try {
     const keyword = req.query.keyword || "";
