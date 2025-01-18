@@ -18,6 +18,7 @@ const JobDescription = () => {
 
   useEffect(() => {
     const fetchSingleJob = async () => {
+      // API connected to Frontend(jobDescription)
       try {
         const res = await axios.get(`${JOB_API_END_POINT}/get/${jobId}`, {
           withCredentials: true,

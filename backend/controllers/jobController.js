@@ -86,7 +86,9 @@ export const getAllJobs = async (req, res) => {
   }
 };
 
-// Search Jobs By Id
+//@description     Search Jobs By Id
+//@route           Get /api/v1/job/get/:id
+//@access          Public/Private
 export const getJobById = async (req, res) => {
   try {
     const jobId = req.params.id;
