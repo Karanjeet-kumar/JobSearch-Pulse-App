@@ -25,6 +25,7 @@ const JobDescription = () => {
   const dispatch = useDispatch();
 
   const applyJobHandler = async () => {
+    // API connected to Frontend(Apply Button)
     try {
       const res = await axios.get(
         `${APPLICATION_API_END_POINT}/apply/${jobId}`,

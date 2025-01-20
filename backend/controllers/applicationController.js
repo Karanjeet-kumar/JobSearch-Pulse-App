@@ -1,6 +1,9 @@
 import { Application } from "../models/applicationModel.js";
 import { Job } from "../models/jobModel.js";
 
+//@description     apply Job by Id
+//@route           Get /api/v1/application/apply/:id
+//@access          Private
 export const applyJob = async (req, res) => {
   try {
     const userId = req.id; // middleware authentication
