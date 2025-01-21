@@ -7,8 +7,8 @@ import JobPage from "./components/JobPage";
 import BrowsePage from "./components/BrowsePage";
 import ProfilePage from "./components/ProfilePage";
 import JobDescription from "./components/JobDescription";
-import Companies from "./components/admin/Companies";
-
+import CompaniesPage from "./components/admin/CompaniesPage";
+import CompanyCreatePage from "./components/admin/CompanyCreatePage";
 const appRouter = createBrowserRouter([
   // Client Side
   {
@@ -43,7 +43,7 @@ const appRouter = createBrowserRouter([
   // Admin side
   {
     path: "/admin/companies",
-    element: <Companies />,
+    element: <CompaniesPage />,
   },
 ]);
 
