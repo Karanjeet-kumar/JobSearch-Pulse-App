@@ -1,11 +1,14 @@
 import { Company } from "../models/companyModel.js";
 
+//@description     Register new company by admin
+//@route           POST /api/v1/company/register
+//@access          Private
 export const registerCompany = async (req, res) => {
   try {
     const { companyName } = req.body;
-    if (!companyName) {
+    if (!companyName || companyName.trim() === "") {
       return res.status(400).json({
-        message: "Company name is required.",
+        message: "Company name is required and cannot be empty.",
         success: false,
       });
     }

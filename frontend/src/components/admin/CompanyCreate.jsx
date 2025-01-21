@@ -13,6 +13,7 @@ const CompanyCreate = () => {
   const [companyName, setCompanyName] = useState();
 
   const registerNewCompany = async () => {
+    // API connected to Frontend(registerNewCompany)
     try {
       const res = await axios.post(
         `${COMPANY_API_END_POINT}/register`,
@@ -31,6 +32,7 @@ const CompanyCreate = () => {
       }
     } catch (error) {
       console.log(error);
+      toast.error(error.response.data.message);
     }
   };
   return (
