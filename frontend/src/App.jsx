@@ -8,7 +8,8 @@ import BrowsePage from "./components/BrowsePage";
 import ProfilePage from "./components/ProfilePage";
 import JobDescription from "./components/JobDescription";
 import CompaniesPage from "./components/admin/CompaniesPage";
-import CompanyCreatePage from "./components/admin/CompanyCreatePage";
+import CompanyCreate from "./components/admin/CompanyCreate";
+import CompanySetup from "./components/admin/CompanySetup";
 const appRouter = createBrowserRouter([
   // Client Side
   {
@@ -44,6 +45,14 @@ const appRouter = createBrowserRouter([
   {
     path: "/admin/companies",
     element: <CompaniesPage />,
+  },
+  {
+    path: "/admin/companies/create",
+    element: <CompanyCreate />,
+  },
+  {
+    path: "/admin/companies/:id",
+    element: <CompanySetup />,
   },
 ]);
 
