@@ -7,10 +7,13 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "sonner";
 import { COMPANY_API_END_POINT } from "../utils/api_constant";
+import { useDispatch } from "react-redux";
+import { setSingleCompany } from "../redux/companySlice";
 
 const CompanyCreate = () => {
   const navigate = useNavigate();
   const [companyName, setCompanyName] = useState();
+  const dispatch = useDispatch();
 
   const registerNewCompany = async () => {
     // API connected to Frontend(registerNewCompany)
@@ -28,6 +31,7 @@ const CompanyCreate = () => {
       if (res?.data?.success) {
         toast.success(res.data.message);
         const companyId = res?.data?.company?._id;
+        dispatch(setSingleCompany(res.data.company));
         navigate(`/admin/companies/${companyId}`);
       }
     } catch (error) {
