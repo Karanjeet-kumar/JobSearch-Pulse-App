@@ -53,7 +53,9 @@ export const getCompany = async (req, res) => {
   }
 };
 
-// get company by id
+//@description     Search Company By Id
+//@route           GET /api/v1/company/get/:id
+//@access          Private
 export const getCompanyById = async (req, res) => {
   try {
     const companyId = req.params.id;
@@ -72,6 +74,7 @@ export const getCompanyById = async (req, res) => {
     console.log(error);
   }
 };
+
 export const updateCompany = async (req, res) => {
   try {
     const { name, description, website, location } = req.body;

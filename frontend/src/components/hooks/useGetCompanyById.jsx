@@ -8,6 +8,7 @@ const useGetCompanyById = (companyId) => {
   const dispatch = useDispatch();
   useEffect(() => {
     const fetchSingleCompany = async () => {
+      // API connected to Frontend(Hooks)
       try {
         const res = await axios.get(
           `${COMPANY_API_END_POINT}/get/${companyId}`,
