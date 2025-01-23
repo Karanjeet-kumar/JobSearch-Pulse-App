@@ -8,6 +8,7 @@ const useGetAllCompanies = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     const fetchCompanies = async () => {
+      // API connected to Frontend(CompaniesDisplay)
       try {
         const res = await axios.get(`${COMPANY_API_END_POINT}/get`, {
           withCredentials: true,

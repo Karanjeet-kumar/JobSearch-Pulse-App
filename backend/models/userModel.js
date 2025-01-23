@@ -32,8 +32,7 @@ const userSchema = new mongoose.Schema(
       company: { type: mongoose.Schema.Types.ObjectId, ref: "Company" },
       profilePhoto: {
         type: String,
-        default:
-          "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
+        default: "https://img.icons8.com/?size=128&id=tZuAOUGm9AuS&format=png",
       },
     },
   },

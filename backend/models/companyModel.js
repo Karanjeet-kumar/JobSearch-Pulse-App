@@ -18,6 +18,7 @@ const companySchema = new mongoose.Schema(
     },
     logo: {
       type: String, // URL to company logo
+      default: "https://img.icons8.com/?size=160&id=113856&format=png",
     },
     userId: {
       type: mongoose.Schema.Types.ObjectId,

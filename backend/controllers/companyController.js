@@ -36,6 +36,9 @@ export const registerCompany = async (req, res) => {
   }
 };
 
+//@description     Search all companies
+//@route           GET /api/v1/company/get
+//@access          Private
 export const getCompany = async (req, res) => {
   try {
     const userId = req.id; // logged in user id
