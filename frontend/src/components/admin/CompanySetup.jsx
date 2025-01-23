@@ -44,6 +44,7 @@ const CompanySetup = () => {
     if (input.file) {
       formData.append("file", input.file);
     }
+    // API connected to Frontend(UpdateCompanyButton)
     try {
       setLoading(true);
       const res = await axios.put(
