@@ -1,6 +1,8 @@
 import { Job } from "../models/jobModel.js";
 
-// Admin will post the job....
+//@description     Admin will post the job....
+//@route           Post /api/v1/job/post
+//@access          private
 export const postJob = async (req, res) => {
   try {
     const {

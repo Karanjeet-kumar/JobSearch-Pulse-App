@@ -47,6 +47,7 @@ const PostJob = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    // API connected to Frontend(postNewJob)
     try {
       setLoading(true);
       const res = await axios.post(`${JOB_API_END_POINT}/post`, input, {
