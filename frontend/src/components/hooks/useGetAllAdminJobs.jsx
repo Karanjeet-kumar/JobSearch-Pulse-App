@@ -8,6 +8,7 @@ const useGetAllAdminJobs = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     const fetchAllAdminJobs = async () => {
+      // API connected to Frontend(JobsDisplay)
       try {
         const res = await axios.get(`${JOB_API_END_POINT}/getadminjobs`, {
           withCredentials: true,

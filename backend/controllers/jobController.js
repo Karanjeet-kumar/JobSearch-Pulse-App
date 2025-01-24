@@ -107,7 +107,9 @@ export const getJobById = async (req, res) => {
   }
 };
 
-// Search Jobs Created By Admin
+//@description     Search Jobs Created By Admin
+//@route           Get /api/v1/job/getadminjobs
+//@access          Private
 export const getAdminJobs = async (req, res) => {
   try {
     const adminId = req.id; // middleware authentication
