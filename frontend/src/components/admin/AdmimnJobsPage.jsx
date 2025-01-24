@@ -6,10 +6,12 @@ import { useDispatch } from "react-redux";
 import AdminJobsTable from "./AdminJobsTable";
 import useGetAllAdminJobs from "../hooks/useGetAllAdminJobs";
 import { setSearchJobByText } from "../redux/jobSlice";
+import { useNavigate } from "react-router-dom";
 
 const AdminJobsPage = () => {
   useGetAllAdminJobs();
   const [input, setInput] = useState("");
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,7 +27,9 @@ const AdminJobsPage = () => {
             placeholder="Filter by name, role . . ."
             onChange={(e) => setInput(e.target.value)}
           />
-          <Button>New Jobs</Button>
+          <Button onClick={() => navigate("/admin/jobs/create")}>
+            New Jobs
+          </Button>
         </div>
         <AdminJobsTable />
       </div>

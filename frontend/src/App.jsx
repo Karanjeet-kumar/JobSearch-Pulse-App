@@ -11,6 +11,7 @@ import CompaniesPage from "./components/admin/CompaniesPage";
 import CompanyCreate from "./components/admin/CompanyCreate";
 import CompanySetup from "./components/admin/CompanySetup";
 import AdminJobsPage from "./components/admin/AdmimnJobsPage";
+import PostJob from "./components/admin/PostJob";
 const appRouter = createBrowserRouter([
   // Client Side
   {
@@ -58,6 +59,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/admin/jobs",
     element: <AdminJobsPage />,
+  },
+  {
+    path: "/admin/jobs/create",
+    element: <PostJob />,
   },
 ]);
 
