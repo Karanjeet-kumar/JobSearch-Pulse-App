@@ -81,7 +81,9 @@ export const getAppliedJobs = async (req, res) => {
   }
 };
 
-// Admin will check....
+//@description     Admin will check....
+//@route           Get /api/v1/application/:id/applicants
+//@access          Private
 export const getApplicants = async (req, res) => {
   try {
     const jobId = req.params.id;

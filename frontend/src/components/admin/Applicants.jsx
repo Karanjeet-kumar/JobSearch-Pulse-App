@@ -14,6 +14,7 @@ const Applicants = () => {
 
   useEffect(() => {
     const fetchAllApplicants = async () => {
+      // API connected to Frontend(ApplicantsPage)
       try {
         const res = await axios.get(
           `${APPLICATION_API_END_POINT}/${params.id}/applicants`,
