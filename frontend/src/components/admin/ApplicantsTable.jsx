@@ -21,6 +21,7 @@ const ApplicantsTable = () => {
   const { applicants } = useSelector((store) => store.application);
 
   const statusHandler = async (status, id) => {
+    // API connected to Frontend(UpdateJobStatus)
     try {
       axios.defaults.withCredentials = true;
       const res = await axios.post(

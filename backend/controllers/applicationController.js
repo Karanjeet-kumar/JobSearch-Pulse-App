@@ -109,6 +109,9 @@ export const getApplicants = async (req, res) => {
   }
 };
 
+//@description     Update Job Status of Applicant By Admin
+//@route           Post /api/v1/application/status/:id/update
+//@access          Private
 export const updateStatus = async (req, res) => {
   try {
     const { status } = req.body;
