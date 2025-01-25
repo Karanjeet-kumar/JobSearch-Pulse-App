@@ -9,6 +9,7 @@ const useGetAppliedJobs = () => {
 
   useEffect(() => {
     const fetchAppliedJobs = async () => {
+      // API connected to Frontend(AppliedJobsDisplay)
       try {
         const res = await axios.get(`${APPLICATION_API_END_POINT}/get`, {
           withCredentials: true,

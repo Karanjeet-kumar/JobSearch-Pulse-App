@@ -53,6 +53,9 @@ export const applyJob = async (req, res) => {
   }
 };
 
+//@description     Get Applied jobs of an applicant
+//@route           Get /api/v1/application/get
+//@access          Private
 export const getAppliedJobs = async (req, res) => {
   try {
     const userId = req.id; // middleware authentication
