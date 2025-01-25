@@ -9,12 +9,14 @@ import {
   TableRow,
 } from "../ui/table";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Edit2, MoreHorizontal } from "lucide-react";
+import { Eye, MoreHorizontal } from "lucide-react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const AdminJobsTable = () => {
   const { allAdminJobs, searchJobByText } = useSelector((store) => store.job);
   const [filterJobs, setFilterJobs] = useState(allAdminJobs);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const filteredJobs = allAdminJobs.filter((job) => {
@@ -52,9 +54,14 @@ const AdminJobsTable = () => {
                     <MoreHorizontal />
                   </PopoverTrigger>
                   <PopoverContent className="w-32">
-                    <div className="flex items-center gap-2 w-fit cursor-pointer">
-                      <Edit2 className="w-4" />
-                      <span>Edit</span>
+                    <div
+                      onClick={() =>
+                        navigate(`/admin/jobs/${job?._id}/applicants`)
+                      }
+                      className="flex items-center w-fit gap-2 cursor-pointer"
+                    >
+                      <Eye className="w-4" />
+                      <span>Applicants</span>
                     </div>
                   </PopoverContent>
                 </Popover>
