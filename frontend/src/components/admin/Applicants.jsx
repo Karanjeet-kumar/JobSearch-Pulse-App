@@ -28,10 +28,10 @@ const Applicants = () => {
     fetchAllApplicants();
   }, []);
   return (
-    <div>
+    <div className="bg-slate-400 min-h-screen">
       <Navbar />
-      <div className="max-w-6xl mx-auto my-10">
-        <h1 className="font-bold text-xl my-5">
+      <div className="px-20 py-10">
+        <h1 className="font-bold text-xl ">
           Applicants {applicants?.applications?.length}
         </h1>
         <ApplicantsTable />

@@ -80,9 +80,9 @@ const CompanySetup = () => {
   }, [singleCompany]);
 
   return (
-    <div>
+    <div className="bg-slate-400 min-h-screen">
       <Navbar />
-      <div className="max-w-xl mx-auto my-10">
+      <div className="px-40 py-10">
         <form onSubmit={submitHandler}>
           <div className="flex items-center gap-5 p-8">
             <Button

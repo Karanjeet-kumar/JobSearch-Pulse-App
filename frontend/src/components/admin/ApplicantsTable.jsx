@@ -38,8 +38,8 @@ const ApplicantsTable = () => {
   };
 
   return (
-    <div>
-      <Table>
+    <div className="px-10 py-10">
+      <Table className="bg-gray-300">
         <TableCaption>A list of your recent applied user</TableCaption>
         <TableHeader>
           <TableRow>

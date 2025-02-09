@@ -34,8 +34,8 @@ const CompaniesTable = () => {
     setFilterCompany(filteredCompany);
   }, [companies, searchCompanyByText]);
   return (
-    <div>
-      <Table>
+    <div className="px-20">
+      <Table className="bg-gray-300">
         <TableCaption>A list of your recent registered companies</TableCaption>
         <TableHeader>
           <TableRow>

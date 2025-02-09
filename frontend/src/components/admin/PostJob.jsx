@@ -68,12 +68,12 @@ const PostJob = () => {
   };
 
   return (
-    <div>
+    <div className="bg-slate-400 min-h-screen">
       <Navbar />
-      <div className="flex items-center justify-center w-screen my-5">
+      <div className="flex items-center justify-center py-5">
         <form
           onSubmit={submitHandler}
-          className="p-8 max-w-4xl border border-gray-200 shadow-lg rounded-md"
+          className="bg-gray-300 p-10 border border-gray-200 shadow-lg rounded-md"
         >
           <div className="grid grid-cols-2 gap-2">
             <div>

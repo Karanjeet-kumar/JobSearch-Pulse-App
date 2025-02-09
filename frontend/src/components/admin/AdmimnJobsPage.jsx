@@ -18,10 +18,10 @@ const AdminJobsPage = () => {
     dispatch(setSearchJobByText(input));
   }, [input]);
   return (
-    <div>
+    <div className="bg-slate-400 min-h-screen">
       <Navbar />
-      <div className="max-w-6xl mx-auto my-10">
-        <div className="flex items-center justify-between my-5">
+      <div>
+        <div className="flex items-center justify-between px-20 py-10">
           <Input
             className="w-fit"
             placeholder="Filter by name, role . . ."
