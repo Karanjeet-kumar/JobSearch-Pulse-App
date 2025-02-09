@@ -28,15 +28,15 @@ const CategoryCarousel = () => {
   };
 
   return (
-    <div>
-      <Carousel className="w-full max-w-xl mx-auto my-5">
+    <div className="bg-gradient-image py-2">
+      <Carousel className="w-full max-w-xl mx-auto">
         <CarouselContent>
           {category.map((cat, index) => (
             <CarouselItem className="basis-1/3">
               <Button
                 onClick={() => searchJobHandler(cat)}
                 variant="outline"
-                className="rounded-full"
+                className="rounded-full bg-gray-200"
               >
                 {cat}
               </Button>

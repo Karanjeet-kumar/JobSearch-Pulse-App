@@ -70,21 +70,19 @@ const JobDescription = () => {
   }, [jobId, dispatch, user?._id]);
 
   return (
-    <div className="max-w-4xl mx-auto my-10">
+    <div className="bg-slate-400 max-w-4xl m-10 p-10">
       <div className="flex items-center justify-between">
-        <div>
-          <h1 className="font-bold text-xl">{singleJob?.title}</h1>
-          <div className="flex items-center gap-2 mt-4">
-            <Badge className={"text-blue-700 font-bold"} variant="ghost">
-              {singleJob?.position} Positions
-            </Badge>
-            <Badge className={"text-[#F83002] font-bold"} variant="ghost">
-              {singleJob?.jobType}
-            </Badge>
-            <Badge className={"text-[#7209b7] font-bold"} variant="ghost">
-              {singleJob?.salary} LPA
-            </Badge>
-          </div>
+        <h1 className="font-bold text-xl">{singleJob?.title}</h1>
+        <div className="flex items-center gap-2 mt-4">
+          <Badge className={"text-blue-700 font-bold"} variant="ghost">
+            {singleJob?.position} Positions
+          </Badge>
+          <Badge className={"text-[#F83002] font-bold"} variant="ghost">
+            {singleJob?.jobType}
+          </Badge>
+          <Badge className={"text-[#7209b7] font-bold"} variant="ghost">
+            {singleJob?.salary} LPA
+          </Badge>
         </div>
         <Button
           onClick={isApplied ? null : applyJobHandler}

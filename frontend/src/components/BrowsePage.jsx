@@ -17,12 +17,12 @@ function Browse() {
   return (
     <div>
       <Navbar />
-      <div className="max-w-7xl mx-4 my-10">
-        <h1 className="font-bold text-xl my-10">
+      <div className="bg-gradient-image max-w-7xl p-4">
+        <h1 className="font-bold text-xl my-10 text-[#36efef]">
           Search Results ({allJobs.length})
         </h1>
         {allJobs.length === 0 ? (
-          <div className="text-center font-bold text-xl">
+          <div className="text-center font-bold text-xl text-[#36efef]">
             No Job Found......
           </div>
         ) : (
