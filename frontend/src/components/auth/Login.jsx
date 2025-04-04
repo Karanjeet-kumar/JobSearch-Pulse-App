@@ -58,12 +58,12 @@ const Login = () => {
     }
   }, []);
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-r from-white to-gray-400">
       <Navbar />
-      <div className="bg-gradient-image flex items-center justify-center max-w-7xl mx-auto">
+      <div className="flex items-center justify-center max-w-7xl mx-auto">
         <form
           onSubmit={submitHandler}
-          className="w-1/2 border bg-cyan-300 border-gray-300 rounded-xl p-4 my-10"
+          className="w-1/2 border bg-gradient-to-r from-blue-400 to-red-400 border-gray-300 rounded-xl p-4 my-10"
         >
           <h1 className="font-bold text-xl mb-5">Login</h1>
           <div className="my-2 space-y-1">

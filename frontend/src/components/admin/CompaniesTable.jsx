@@ -35,7 +35,7 @@ const CompaniesTable = () => {
   }, [companies, searchCompanyByText]);
   return (
     <div className="px-20">
-      <Table className="bg-gray-300">
+      <Table className="bg-gradient-to-r from-gray-200 to-gray-400 border border-gray-500">
         <TableCaption>A list of your recent registered companies</TableCaption>
         <TableHeader>
           <TableRow>

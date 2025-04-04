@@ -28,24 +28,26 @@ const CategoryCarousel = () => {
   };
 
   return (
-    <div className="bg-gradient-image py-2">
-      <Carousel className="w-full max-w-xl mx-auto">
-        <CarouselContent>
-          {category.map((cat, index) => (
-            <CarouselItem className="basis-1/3">
-              <Button
-                onClick={() => searchJobHandler(cat)}
-                variant="outline"
-                className="rounded-full bg-gray-200"
-              >
-                {cat}
-              </Button>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+    <div className="bg-gradient-to-r from-white to-gray-400">
+      <div className="bg-gradient-to-r from-blue-400 to-red-400 mx-4 rounded-b-lg">
+        <Carousel className="p-2 rounded-lg w-full max-w-xl mx-auto">
+          <CarouselContent>
+            {category.map((cat, index) => (
+              <CarouselItem className="basis-1/3">
+                <Button
+                  onClick={() => searchJobHandler(cat)}
+                  variant="outline"
+                  className="rounded-full bg-gray-200"
+                >
+                  {cat}
+                </Button>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
     </div>
   );
 };

@@ -15,10 +15,10 @@ function Browse() {
     };
   }, []);
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-r from-white to-gray-400">
       <Navbar />
-      <div className="bg-gradient-image max-w-7xl p-4">
-        <h1 className="font-bold text-xl my-10 text-[#36efef]">
+      <div className="max-w-7xl p-4">
+        <h1 className="font-bold text-xl my-5 text-[#36efef]">
           Search Results ({allJobs.length})
         </h1>
         {allJobs.length === 0 ? (

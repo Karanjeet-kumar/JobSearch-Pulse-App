@@ -18,9 +18,9 @@ function Profile() {
   const { user } = useSelector((store) => store.auth);
 
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-r from-white to-gray-400">
       <Navbar />
-      <div className="bg-cyan-300 max-w-4xl mx-auto border border-gray-200 rounded-2xl my-5 p-8">
+      <div className="bg-gradient-to-r from-blue-400 to-red-400 max-w-4xl mx-auto border border-gray-200 rounded-2xl my-5 p-8">
         <div className="flex justify-between">
           <div className="flex items-center gap-4">
             <Avatar className="h-24 w-24">

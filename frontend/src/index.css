@@ -70,12 +70,6 @@
   }
 }
 @layer utilities {
-  .bg-gradient-image {
-    background-color: #000000;
-    background-image: url("https://www.transparenttextures.com/patterns/old-map.png");
-  }
-}
-@layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
       display: none;

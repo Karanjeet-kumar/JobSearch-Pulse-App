@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 function AppliedJobTable() {
   const { allAppliedJobs } = useSelector((store) => store.job);
   return (
-    <div className="bg-slate-300">
+    <div className="bg-cyan-300">
       <Table>
         <TableCaption>A list of your applied jobs</TableCaption>
         <TableHeader>

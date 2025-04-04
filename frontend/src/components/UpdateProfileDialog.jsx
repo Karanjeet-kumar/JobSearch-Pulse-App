@@ -83,7 +83,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
     <div>
       <Dialog open={open}>
         <DialogContent
-          className="bg-cyan-300 sm:max-w-[425px]"
+          className="bg-gradient-to-b from-blue-400 to-red-400 sm:max-w-[425px]"
           onInteractOutside={() => setOpen(false)}
         >
           <DialogHeader>

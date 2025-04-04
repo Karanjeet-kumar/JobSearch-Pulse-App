@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "../ui/button";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { LogOut, User2 } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
@@ -15,9 +15,14 @@ const Navbar = () => {
   const { user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation(); // Get current route
+  const [activeTab, setActiveTab] = useState(location.pathname); // Default active link
+
+  useEffect(() => {
+    setActiveTab(location.pathname); // Update active tab when route changes
+  }, [location.pathname]); // Runs every time the route changes
 
   const logoutHandler = async () => {
-    // API connected to Frontend(Logout)
     try {
       const res = await axios.get(`${USER_API_END_POINT}/logout`, {
         withCredentials: true,
@@ -29,11 +34,12 @@ const Navbar = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.message);
+      toast.error(error.response?.data?.message || "Logout failed");
     }
   };
+
   return (
-    <div className="bg-black text-white">
+    <div className="bg-gradient-to-r from-gray-500 to-gray-900 text-white">
       <div className="flex items-center justify-between mx-4 max-w-7xl h-16">
         <div className="flex items-center gap-3">
           <img
@@ -55,22 +61,67 @@ const Navbar = () => {
             {user && user.role === "recruiter" ? (
               <>
                 <li>
-                  <Link to="/admin/companies">Companies</Link>
+                  <Link
+                    to="/admin/companies"
+                    className={`${
+                      activeTab === "/admin/companies"
+                        ? "text-cyan-500 font-bold rounded-full bg-gradient-to-r from-blue-200 to-red-200 px-2"
+                        : "text-gray-400"
+                    }`}
+                  >
+                    Companies
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/admin/jobs">Jobs</Link>
+                  <Link
+                    to="/admin/jobs"
+                    className={`${
+                      activeTab === "/admin/jobs"
+                        ? "text-cyan-500 font-bold rounded-full bg-gradient-to-r from-blue-200 to-red-200 px-2"
+                        : "text-gray-400"
+                    }`}
+                  >
+                    Jobs
+                  </Link>
                 </li>
               </>
             ) : (
               <>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link
+                    to="/"
+                    className={`${
+                      activeTab === "/"
+                        ? "text-cyan-500 font-bold rounded-full bg-gradient-to-r from-blue-200 to-red-200 px-2"
+                        : "text-gray-400"
+                    }`}
+                  >
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/jobs">Jobs</Link>
+                  <Link
+                    to="/jobs"
+                    className={`${
+                      activeTab === "/jobs"
+                        ? "text-cyan-500 font-bold rounded-full bg-gradient-to-r from-blue-200 to-red-200 px-2"
+                        : "text-gray-400"
+                    }`}
+                  >
+                    Jobs
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/browse">Browse</Link>
+                  <Link
+                    to="/browse"
+                    className={`${
+                      activeTab === "/browse"
+                        ? "text-cyan-500 font-bold rounded-full bg-gradient-to-r from-blue-200 to-red-200 px-2"
+                        : "text-gray-400"
+                    }`}
+                  >
+                    Browse
+                  </Link>
                 </li>
               </>
             )}
@@ -97,18 +148,18 @@ const Navbar = () => {
                 <Avatar className="cursor-pointer">
                   <AvatarImage
                     src={user?.profile?.profilePhoto}
-                    alt="@shadcn"
+                    alt="Profile"
                   />
                 </Avatar>
               </PopoverTrigger>
-              <PopoverContent className="bg-gray-200 w-80">
-                <div className="">
+              <PopoverContent className="bg-gradient-to-r from-white to-gray-400 w-80">
+                <div>
                   <div className="flex gap-2 space-y-2">
                     <div className="py-1">
                       <Avatar className="cursor-pointer">
                         <AvatarImage
                           src={user?.profile?.profilePhoto}
-                          alt="@shadcn"
+                          alt="Profile"
                         />
                       </Avatar>
                     </div>
@@ -124,7 +175,6 @@ const Navbar = () => {
                       <div className="flex w-fit items-center gap-2 cursor-pointer">
                         <User2 />
                         <Button variant="link">
-                          {" "}
                           <Link to="/profile">View Profile</Link>
                         </Button>
                       </div>

@@ -24,9 +24,9 @@ function Jobs() {
     }
   }, [allJobs, searchedQuery]);
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-r from-white to-gray-400">
       <Navbar />
-      <div className="bg-gradient-image max-w-7xl p-4">
+      <div className="max-w-7xl p-4">
         <div className="flex gap-5">
           <div className="w-20%">
             <FilterCard />

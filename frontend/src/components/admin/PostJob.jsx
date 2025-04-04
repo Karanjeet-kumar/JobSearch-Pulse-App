@@ -73,7 +73,7 @@ const PostJob = () => {
       <div className="flex items-center justify-center py-5">
         <form
           onSubmit={submitHandler}
-          className="bg-gray-300 p-10 border border-gray-200 shadow-lg rounded-md"
+          className="bg-gradient-to-r from-gray-200 to-gray-400 border border-gray-500 p-10 shadow-lg rounded-md"
         >
           <div className="grid grid-cols-2 gap-2">
             <div>
